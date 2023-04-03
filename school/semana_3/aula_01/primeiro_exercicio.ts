@@ -7,14 +7,14 @@ const hw = express();
 hw.use(cors());
 hw.use(express.json());
 
-const router = Router();
+const primeiroExercicioRouter = Router();
 
-router.get('/', (req: Request, res: Response) => {
+primeiroExercicioRouter.get('/', (req: Request, res: Response) => {
     const helloworld = {message: 'Hello World'};
     res.send(helloworld);
 })
 
-hw.use(router);
+hw.use(primeiroExercicioRouter);
 
 const port = 3000;
 
