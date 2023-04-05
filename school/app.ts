@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import { Request, Response, Router} from 'express';
-import routes from '../school/semana_3/aulas_02_e_03';
-
+import routes from '../school/semana_5/aulas_01_e_02';
+import connection from '../school/semana_5/config/database';
 
 const app = express();
 
@@ -21,6 +21,10 @@ app.use(router);
  */
 const port = 3000;
 
-app.listen(port, () => {
-    console.log('Aplicação online na porta: ', port);
-})
+connection.then(() => {
+    console.log("banco de dados conectado!")
+    app.listen(port, () => {
+        console.log('Aplicação online na porta: ', port);
+    })
+}).catch((error) => console.log(error));
+
