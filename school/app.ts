@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import { Request, Response, Router} from 'express';
-import routes from '../school/semana_5/aulas_01_e_02';
+import { Router } from 'express';
+import routes from '../school/semana_6/aulas_01/index';
 import connection from '../school/semana_5/config/database';
 
 const app = express();
